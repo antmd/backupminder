@@ -1,0 +1,78 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXFileReference section */
+		ED86E39D16F7C9C600DA6C3C /* BackupMinder */ = {isa = PBXFileReference; lastKnownFileType = text; name = BackupMinder; path = "../Library/Application Support/BackupMinder/BackupMinder"; sourceTree = "<group>"; };
+		ED86E39E16F7C9C600DA6C3C /* BackupMinderHelper */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; name = BackupMinderHelper; path = "../Library/Application Support/BackupMinder/BackupMinderHelper"; sourceTree = "<group>"; };
+		ED86E39F16F7C9C600DA6C3C /* BackupMinderReadme.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = BackupMinderReadme.rtf; path = "../Library/Application Support/BackupMinder/BackupMinderReadme.rtf"; sourceTree = "<group>"; };
+		ED86E3A016F7C9C600DA6C3C /* org.backupminder.sample.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = org.backupminder.sample.plist; path = "../Library/Application Support/BackupMinder/org.backupminder.sample.plist"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		ED86E39316F7C96F00DA6C3C = {
+			isa = PBXGroup;
+			children = (
+				ED86E39D16F7C9C600DA6C3C /* BackupMinder */,
+				ED86E39E16F7C9C600DA6C3C /* BackupMinderHelper */,
+				ED86E39F16F7C9C600DA6C3C /* BackupMinderReadme.rtf */,
+				ED86E3A016F7C9C600DA6C3C /* org.backupminder.sample.plist */,
+			);
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXProject section */
+		ED86E39416F7C96F00DA6C3C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0460;
+			};
+			buildConfigurationList = ED86E39716F7C96F00DA6C3C /* Build configuration list for PBXProject "BackupMinder" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = ED86E39316F7C96F00DA6C3C;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+			);
+		};
+/* End PBXProject section */
+
+/* Begin XCBuildConfiguration section */
+		ED86E39816F7C96F00DA6C3C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+			};
+			name = Debug;
+		};
+		ED86E39916F7C96F00DA6C3C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		ED86E39716F7C96F00DA6C3C /* Build configuration list for PBXProject "BackupMinder" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ED86E39816F7C96F00DA6C3C /* Debug */,
+				ED86E39916F7C96F00DA6C3C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = ED86E39416F7C96F00DA6C3C /* Project object */;
+}

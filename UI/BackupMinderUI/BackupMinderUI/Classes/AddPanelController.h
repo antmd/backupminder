@@ -56,6 +56,9 @@ enum panelMode_t
     
     // Track the state of the editted backup
     BOOL currentlyDisabled;
+    
+    // Open panel default url when no other is available
+    NSURL* m_defaultDirectoryURL;
 }
 
 // Brief: Initialize the window with a given Add/Edit mode

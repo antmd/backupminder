@@ -21,20 +21,29 @@ const int MAX_WARN_DAYS_VALUE = 99;
 
 - (id)initWithMode:(enum panelMode_t)mode_
 {
-    if (! (self = [super initWithWindowNibName: @"AddPanel"]))
+    self = [super initWithWindowNibName: @"AddPanel"];
+    if (self != nil)
+    {
+        // Store the panelMode_t
+        m_panelMode = mode_;
+        m_defaultDirectoryURL = [[[ NSFileManager defaultManager ] URLForDirectory:NSUserDirectory
+                                                                          inDomain:NSUserDomainMask
+                                                                 appropriateForURL:nil
+                                                                            create:NO
+                                                                             error:nil ]
+                                 retain];
+        currentlyDisabled = NO;
+    }
+    else
     {
 #ifdef DEBUG
         NSLog (@"AddPanelController::initWithMode: Failed to init "
                "AddPanel.xib");
 #endif // DEBUG
-        return nil; 
+        
     }
     
-    // Store the panelMode_t
-    m_panelMode = mode_;
     
-    currentlyDisabled = NO;
-        
     return self;
 }
 
@@ -400,7 +409,9 @@ const int MAX_WARN_DAYS_VALUE = 99;
 	[openPanel setCanChooseDirectories:YES];
 	[openPanel setAllowsMultipleSelection:NO];
     // The tooltip contains the full path, use it as the source
-	[openPanel setDirectory: [m_backupSourceTextField toolTip]];
+	[openPanel setDirectoryURL: ([m_backupSourceTextField toolTip]?
+                                 [NSURL fileURLWithPath:[m_backupSourceTextField toolTip]]:
+                                 m_defaultDirectoryURL)];
 	
 	// Get the return value
 	NSInteger returnValue = [openPanel runModal]; 
@@ -427,7 +438,9 @@ const int MAX_WARN_DAYS_VALUE = 99;
 	[openPanel setCanChooseDirectories:YES];
 	[openPanel setAllowsMultipleSelection:NO];
     // The tooltip contains the full path, use it as the source
-	[openPanel setDirectory: [m_archiveDestinationTextField toolTip]];
+	[openPanel setDirectoryURL: ([m_archiveDestinationTextField toolTip]?
+                                 [NSURL fileURLWithPath:[m_archiveDestinationTextField toolTip]]:
+                                 m_defaultDirectoryURL) ];
 	
 	// Get the return value
 	NSInteger returnValue = [openPanel runModal]; 
@@ -447,5 +460,6 @@ const int MAX_WARN_DAYS_VALUE = 99;
 		}
 	}    
 }
+
 
 @end

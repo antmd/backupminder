@@ -46,15 +46,15 @@ int main(int argc, char** argv)
         return -3;
     }
     
-    char* launchCmd = "/bin/launchctl";
-    char* loadOption = "load";
-    char* unloadOption = "unload";
+    const char* launchCmd = "/bin/launchctl";
+    const char* loadOption = "load";
+    const char* unloadOption = "unload";
     
-    char** argvz = (char**)malloc(sizeof(char*) * argc);
+    const char** argvz = (const char**)malloc(sizeof(char*) * argc);
     argvz[0] = launchCmd;
     argvz[1] = load ? loadOption : unloadOption;
     argvz[2] = argv[2];
     
-    execv(argvz[0], argvz);
+    execv(argvz[0], (char * const*)argvz);
     return 0;
 }
